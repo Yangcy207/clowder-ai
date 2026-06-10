@@ -192,6 +192,7 @@
       "variants": [
         {
           "id": "opus-default",
+          "catId": "opus",
           "clientId": "anthropic",
           "defaultModel": "claude-opus-4-6",
           "mcpSupport": true,
