@@ -211,13 +211,10 @@
             "maxContentLengthPerMsg": 100000
           },
           "voiceConfig": {
-            "voice": "zm_yunjian",
+            "voice": "mimo_default",
             "langCode": "zh",
             "speed": 1,
-            "refAudio": "genshin/流浪者/vo_wanderer_dialog_greetingMorning.wav",
-            "refText": "快醒醒，太阳要晒屁股咯。哈，你不会以为我会这么叫你起床吧？",
-            "instruct": "用一个调皮狡黠的少年语气说话，带着得意和戏弄",
-            "temperature": 0.3
+            "instruct": "用一个调皮狡黠的少年语气说话，带着得意和戏弄"
           }
         },
         {

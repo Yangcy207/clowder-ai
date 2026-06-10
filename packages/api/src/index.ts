@@ -98,6 +98,7 @@ import { createThreadStore } from './domains/cats/services/stores/factories/Thre
 import { createWorkflowSopStore } from './domains/cats/services/stores/factories/WorkflowSopStoreFactory.js';
 import { RedisInvocationRecordStore } from './domains/cats/services/stores/redis/RedisInvocationRecordStore.js';
 import { RedisMessageStore } from './domains/cats/services/stores/redis/RedisMessageStore.js';
+import { MiMoTtsProvider } from './domains/cats/services/tts/MiMoTtsProvider.js';
 import { MlxAudioTtsProvider } from './domains/cats/services/tts/MlxAudioTtsProvider.js';
 import { initStreamingTtsRegistry } from './domains/cats/services/tts/StreamingTtsChunker.js';
 import { TtsRegistry } from './domains/cats/services/tts/TtsRegistry.js';
@@ -2561,6 +2562,7 @@ async function main(): Promise<void> {
   // the API (codex P1 2026-05-26). Explicit TTS_URL env is still honored
   // because resolveServiceEndpoint reads endpointEnvVars first.
   const ttsRegistry = new TtsRegistry();
+  ttsRegistry.register(new MiMoTtsProvider());
   ttsRegistry.register(new MlxAudioTtsProvider());
   const ttsCacheDir = process.env.TTS_CACHE_DIR ?? './data/tts-cache';
   await app.register(ttsRoutes, { ttsRegistry, cacheDir: ttsCacheDir });
